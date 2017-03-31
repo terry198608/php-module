@@ -35,7 +35,7 @@ function insertLog($event, $type = 0){
 //模拟下单操作  
 //库存是否大于0  
 mysql_query("BEGIN");//开始事务  
-$sql = "select number from ih_store where goods_id = '$goods_id' and sku_id = '$sku_id'";//此时这条记录被锁住, 其它事务必须等待此次事务提交后才能执行  
+$sql = "select number from ih_store where goods_id = '$goods_id' and sku_id = '$sku_id' FOR UPDATE";//此时这条记录被锁住, 其它事务必须等待此次事务提交后才能执行  
 $rs = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($rs);
 if($row['number']>0){
