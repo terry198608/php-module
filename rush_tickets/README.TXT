@@ -2,3 +2,6 @@
 测试方式
 apache ab 进行并发测试
 ab -r -n 80 -c 80  http://localhost/test.php
+
+顺便留下一个联系方式,想一起学习交流的朋友可以加一下
+Q群: 139692304
